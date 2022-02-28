@@ -23,5 +23,7 @@ jobs:
       run:  dotnet restore CoronaProgram.Tests/CoronaProgram.Tests.csproj
     - name: Build
       run: dotnet build RestAPI2/RestAPI2.sln --no-restore
+    - name: UT
+      run: dotnet test
     - name: Test
       run: dotnet test CoronaProgram.Tests/CoronaProgram.Tests.csproj  --verbosity normal

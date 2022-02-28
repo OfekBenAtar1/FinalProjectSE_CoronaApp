@@ -18,7 +18,11 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore CoronaProgram.Tests.csproj
+      run: |
+        pwd
+        ls
+        stat -c "%s" CoronaProgram.Test.csproj
+        dotnet restore RestAPI2.sln
     - name: Build
       run: dotnet build --no-restore
     - name: Test
